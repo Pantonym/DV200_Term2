@@ -1,20 +1,248 @@
-ul {
+/* Universal Styling */
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/* --Basic Elements */
+body {
+    background-color: #F3F3FD;
+}
+
+/* --Fonts */
+.actor {
+    font-family: 'actor', sans-serif;
+    src: url("../assets/fonts/Actor/Actor-Regular.ttf");
+}
+
+/* --Navbar */
+.nav_sign_out {
+    color: #FE7235;
+
+    font-size: 20px;
+}
+
+.nav_sign_out:hover {
+    color: #6DB5CB;
+}
+
+.nav_item {
+    color: black;
+
+    font-size: 24px;
+
+    margin-left: 20px;
+}
+
+.nav_item:hover {
+    color: #6DB5CB;
+}
+
+.nav_active {
+    text-decoration: underline;
+    text-decoration-color: #6DB5CB;
+}
+
+/* Footer */
+.footer {
+    background-color: white;
+
+    height: 400px;
+    width: 100%;
+
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+
+    box-shadow: 5px -5px 5px rgba(0, 0, 0, 0.1);
+
+    padding: 50px;
+    padding-top: 25px;
+    padding-bottom: 0px;
+}
+
+.footer_ul {
     list-style-type: none;
 }
 
-body {
-    font-family: Verdana, sans-serif;
+.footer_li {
+    margin-top: 20px;
+
+    color: #4F555A;
+
+    font-size: 22px;
 }
 
-/* Month header */
+.footer_bottom {
+    height: 50px;
+    width: 100%;
+}
+
+/* --Background Styling */
+.Circle_BG_1 {
+    position: absolute;
+    width: 222.34px;
+    height: 222.34px;
+    left: 265.95px;
+    top: 556.19px;
+
+    background: #9B8BFF;
+    filter: blur(155.931px);
+
+    z-index: -1;
+}
+
+.Circle_BG_2 {
+    position: absolute;
+    width: 222.34px;
+    height: 222.34px;
+    left: 65.26px;
+    top: 294.5px;
+
+    background: #0500FF;
+    opacity: 0.45;
+    filter: blur(155.931px);
+
+    z-index: -1;
+}
+
+/* Log In Page */
+#bg_signin {
+    background-image: url("../assets/images/physician_img.svg");
+
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+/* --Inputs */
+.input_signin {
+    height: 60px;
+    width: 400px;
+
+    border-radius: 10px;
+}
+
+/* ----Small buttons on each input */
+.btn_signin {
+    border: 1px solid black;
+    border-left: 0px;
+
+    background-color: white;
+}
+
+.btn_signin:hover {
+    border: 1px solid black;
+    border-left: 0px;
+}
+
+/* --Submit log in */
+.button_signin {
+    height: 60px;
+    width: 400px;
+
+    border-radius: 10px;
+
+    background-color: #4461F2;
+}
+
+/* Appointments */
+#calendar_group {
+    height: 450px;
+}
+
+/* --Upcoming Appointments */
+#UpcomingApp {
+    color: #6DB5CB;
+
+    font-size: 60px;
+
+    width: 300px;
+    margin-left: 10%;
+}
+
+/* --Dayplan */
+#Dayplan {
+    height: 400px;
+    width: 450px;
+
+    margin-left: 5%;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 5px -5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+
+    float: left;
+}
+
+#dayplan_header {
+    height: 20%;
+
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-color: #6DB5CB;
+}
+
+#dayplan_body {
+    height: 80%;
+
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background-color: white;
+}
+
+#dayplan_table {
+    width: 450px;
+}
+
+#dayplan_table table,
+th,
+td {
+    border-right: 2px solid black;
+    border-collapse: collapse;
+
+    padding-left: 5px;
+}
+
+#dayplan_table th {
+    font-size: 30px;
+
+    border-bottom: 3px solid black;
+
+    color: #6DB5CB;
+}
+
+#dayplan_table td {
+    font-size: 20px;
+
+    color: #6F6C90;
+}
+
+/* --Calendar */
+#calendar_holder {
+    width: 65%;
+    height: 450px;
+
+    float: left;
+}
+
+ul.calendar {
+    list-style-type: none;
+}
+
+/* --Month header */
 .month {
     padding: 70px 25px;
-    width: 100%;
-    background: #1abc9c;
+    width: 90%;
+
+    margin-left: 5%;
+
+    background: #6DB5CB;
     text-align: center;
 }
 
-/* Month list */
+/* --Month list */
 .month ul {
     margin: 0;
     padding: 0;
@@ -27,23 +255,26 @@ body {
     letter-spacing: 3px;
 }
 
-/* Previous button inside month header */
+/* --Previous button inside month header */
 .month .prev {
     float: left;
     padding-top: 10px;
 }
 
-/* Next button */
+/* --Next button */
 .month .next {
     float: right;
     padding-top: 10px;
 }
 
-/* Weekdays (Mon-Sun) */
+/* --Weekdays (Mon-Sun) */
 .weekdays {
     margin: 0;
     padding: 10px 0;
     background-color: #ddd;
+
+    width: 90%;
+    margin-left: 5%;
 }
 
 .weekdays li {
@@ -53,11 +284,14 @@ body {
     text-align: center;
 }
 
-/* Days (1-31) */
+/* --Days (1-31) */
 .days {
     padding: 10px 0;
     background: #eee;
     margin: 0;
+
+    width: 90%;
+    margin-left: 5%;
 }
 
 .days li {
@@ -70,9 +304,96 @@ body {
     color: #777;
 }
 
-/* Highlight the "current" day */
+/* --Highlight the "current" day */
 .days li .active {
     padding: 5px;
-    background: #1abc9c;
+    background: #FE7235;
     color: white !important
 }
+
+/* Tables */
+.search_bar {
+    width: 535px;
+    height: 75px;
+
+    background: #F9F7F7;
+    box-shadow: 1.23333px 3.7px 2.46667px rgba(145, 139, 139, 0.4);
+    border-radius: 30px;
+
+    margin-left: 7.5%;
+}
+
+.search_input {
+    border-radius: 30px;
+    background: #F9F7F7;
+
+    padding-left: 30px;
+
+    font-size: 20px;
+}
+
+.table_selected {
+    padding-top: 1%;
+
+    margin-left: 7.5%;
+
+    height: 530px;
+    width: 1280px;
+
+    background: linear-gradient(136.23deg, #EFEFEF 14.84%, rgba(187, 187, 187, 0) 100.63%);
+    border: 3px solid #6DB5CB;
+    filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 35.3125px;
+}
+
+.selected_name {
+    margin-left: 3%;
+
+    font-size: 54px;
+
+    width: 100%;
+}
+
+.selected_ul {
+    list-style-type: none;
+}
+
+.selected_li {
+    margin-left: 7px;
+    margin-top: 5px;
+
+    color: #4F555A;
+
+    font-size: 32px;
+}
+
+.selected_img {
+    float: right;
+
+    margin-top: 1%;
+    margin-right: 3%;
+}
+
+.all_table {
+    margin-top: 50px;
+    margin-left: 7.5%;
+    margin-bottom: 50px;
+
+    height: 650px;
+    width: 1280px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 5px -5px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+}
+
+.table_all_table {
+    height: 650px;
+    width: 1280px;
+}
+
+.th_all_table {
+    border-bottom: 2px solid black;
+}
+
+/* Patients Page */
