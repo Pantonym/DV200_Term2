@@ -25,7 +25,6 @@
     <div class="Circle_BG_2"></div>
 
     <!-- Navbar -->
-
     <nav class="navbar navbar-expand-sm bg-none navbar-light" style="margin-left: 50px;">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
@@ -33,7 +32,6 @@
             </a>
         </div>
     </nav>
-
     <!-- Navbar End -->
 
     <!-- Content -->
@@ -44,7 +42,7 @@
         </div>
 
         <!-- --Input Form -->
-        <div class="col" style="margin-left: 15%;">
+        <form class="col" style="margin-left: 15%;" action="actions/signin.php">
 
             <!-- --Title -->
             <h2 style="text-align: center; font-size: 46px; width: 400px;">Welcome Back</h2>
@@ -54,24 +52,32 @@
             <!-- --Inputs -->
             <div class="input-group mb-3 input_signin">
                 <input type="text" style="border-right: 0px; border-color: black;" class="form-control"
-                    placeholder="Enter Name">
-                <button class="btn btn_signin" type="submit" style="width: 50px;"><span>&#10005;</span></button>
+                    name="signin_name" placeholder="Enter Name">
+                <button class="btn btn_signin" type="button" style="width: 50px;"><span>&#10005;</span></button>
             </div>
 
             <div class="input-group mb-3 input_signin">
                 <input type="password" style="border-right: 0px; border-color: black;" class="form-control"
-                    placeholder="Search" id="SignUp_Pass_Input">
-                <button class="btn btn_signin" type="submit" style="width: 50px;" onclick="ShowPass()">
+                    name="signin_pass" placeholder="Search" id="SignUp_Pass_Input">
+                <button class="btn btn_signin" type="button" style="width: 50px;" onclick="ShowPass()">
                     <span><img src="../assets/images/PasswordShowHide.svg" alt="Show/Hide Password"></span>
                 </button>
             </div>
 
             <!-- --Submit Button -->
-            <a href="appointments.html">
-                <button type="button" class="btn btn-primary button_signin">Sign In</button>
-            </a>
-        </div>
+            <button type="Submit" class="btn btn-primary button_signin">Sign In</button>
+            <?php
+            if (isset($_GET['error'])) { ?>
+
+                <p style="color: red; width: 400px; text-align: center; font-size: 24px;">
+                    <?php echo $_GET['error']; ?>
+                </p>
+
+            <?php } ?>
+
+        </form>
     </div>
     <!-- Content End -->
-    
+
+
 </body>
