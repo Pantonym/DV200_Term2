@@ -1,39 +1,35 @@
-<br />
+<!-- Project Info -->
+<br>
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Pantonym/DV200_Term2?color=lightblue)
 ![GitHub watchers](https://img.shields.io/github/watchers/Pantonym/DV200_Term2?color=lightblue)
 ![GitHub language count](https://img.shields.io/github/languages/count/Pantonym/DV200_Term2?color=lightblue)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Pantonym/DV200_Term2?color=lightblue)
 
+<!-- Name, Number, Subject and Term -->
 <h5 align="center" style="padding:0;margin:0;">Nico van Wyk</h5>
 <h5 align="center" style="padding:0;margin:0;">Student Number: 221179</h5>
 <h6 align="center">DV200 | Term 2</h6>
 
 </br>
 
+<!-- Logo and link to repository -->
 <p align="center">
-
   <a href="https://github.com/Pantonym/DV200_Term2">
-    <img src="assets\images\Logo.svg" width="200px">
+    <img src="assets\images\Logo.svg" width="200px" style="margin-left: 10px">
   </a>
-
 </p>
 
-<h3 align="center">Dream Team</h3>
-
-  <p align="center">
-    This is a basketball statistics website that compares NBA players performance.<br>
-
-   <br />
-   <br />
-   <!-- <a href="https://youtu.be/8iZ_rSmcN0E">View Demo</a> -->
-    ·
-    <a href="https://github.com/Tsebo200/Dream-Team/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/Tsebo200/Dream-Team/issues">Request Feature</a>
+<!-- Short Description -->
+<h3 align="center">VeriCalm: Medical Management Portal</h3>
+<p align="center"> This is a database management portal for a medical office, where receptionists can manage appointments, patients, doctors and their own profiles.
+    <br>
+    <!-- Bug and New Feature Links -->
+    <a href="https://github.com/Pantonym/DV200_Term2/issues">Report Bug</a>
+    <a href="https://github.com/Pantonym/DV200_Term2/issues">Request Feature</a>
 </p>
+
 <!-- TABLE OF CONTENTS -->
-
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
