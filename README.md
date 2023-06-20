@@ -93,166 +93,100 @@ Here are a couple of ways to clone this repo:
     ```
 
 ## Features and Functionality
-
-<!-- note how you can use your gitHub link. Just make a path to your assets folder -->
-
-
-
-
 <!-- CONCEPT PROCESS -->
-<!-- Briefly eOpenStacklain your concept ideation process -->
-<!-- here you will add things like wireframing, data structure planning, anything that shows your process. You need to include images-->
-
 ## Concept Process
 
-I went with a simple and minimalistic UI design as I wanted a dark mode type of design, thus I utilised dark colours. DreamTeam is a website that is there to help users understand the sport of basketball. The process I took for this project was to explore and figure out things on my own so I took an explorative route for this one as I feel it payed of in my experience as a developer
+I chose a simple and easy-to-understand design because the management portal controls appointments that are directly related to someone's wellbeing. Excessive styling would only distract from the purpose of the portal: medical appointments that are highly important. I used a very light purple as my background colour to give the text better visibility, as well as to compliment the orange used in the logo. It also adds to the light blue I used as my secondary colour, with my main colour being white  to add to the 'medical' feel I wanted to emulate. I included a lot of self study in this project, such as using password hashing and designing my login process before getting feedback on how to improve it.
 
-
-
+<!-- Wireframes -->
 ### Wireframes
 
-<!-- ![image8](client/src/Assets/mockups/wireframes.jpg) -->
-![image1](src/Assets/Landing%20Page.jpg)
-![image2](src/Assets/Comparison%20Page.jpg)
-![image3](src/Assets/Timeline%20Page.jpg)
+![image1](assets\wireframes\Login.png)
+![image2](assets\wireframes\Landing.png)
+![image3](assets\wireframes\PatientPage.png)
+![image4](assets\wireframes\DoctorPage.png)
+![image5](assets\wireframes\ReseptionistPage.png)
+![image6](assets\wireframes\AddUser.png)
 
+<!-- Development Process -->
 ## Development Process
 
-The `Development Process` is the technical implementations and functionality done for the app.
+The `Development Process` is the technical implementations and functionality done for the portal.
 
+<!-- Implementation -->
 ### Implementation Process
 
-- I used `npx create-react app` to create this React project. I implemented component-based development instead of classes. By doing this, I will be able to easily inject and eject components and sub-components into my project, making it refactorable and reusable instead of writing up classes I have to do everytime making it tedious and redundant
+* I used `MySQL` through `Xampp`to create the database used in this project.
 
-- I obeyed the `saas` styling of my project which is slightly different to `scss` as the manner in which indentation has been applied is important and semi-colons are not allowed 
-
-<!-- and used `module.scss` to style each individual component. An id get given to each classname, making the styling super easy -->
-
-- `axios` was implemented so that I can make HTTP requests to the BallDontLie API so that I can dynamically display these datasets on a magic chart called charts.js version 5
-
-<!-- edit, delete and send (CRUD) data to it -->
-
-
+<!-- Highlights -->
 #### Highlights
 
-stipulated the highlight you experienced with the project
+* A great highlight was seeing the code come together; seeing my sql statements actually changing the database from the portal I made
+* Problem solving was also very fun, white bugs can be irritating if you don't know where they are coming from, it's always a highlight to implement code that works flawlessly on first try
+* Learning PHP was a great highlight as I began to understand how you can sue it to build websites. It definitely compliments my way of thinking more than conventional JavaScript and HTML.
 
-- A very big high point was seeing the data from my backend being populated dynamically in my front-end.
-- Fixing all the annoying bugs will always be a plus point
-- Handing in the project on time
-
-
+<!-- Challenges -->
+<!-- Explain the challenges faced with the project and why you think you faced it or how you think you'll solve it (if not solved), or how you solved it -->
 #### Challenges
 
-stipulated the challenges you faced with the project and why you think you faced it or how you think you'll solve it (if not solved)
+* The largest issue I had was understanding how to upload an image to the website. I solved it by seeking knowledge from those who understood the language better than I did so i may learn from them. 
 
-- The largest issue I had was manipulating the API data and formatting it to fit with the chart.js datasets
-as each player had their own end point, thus I had to create create an array of the IDs I wanted and used a for loop it within the promise whilst adding the baseUrl in the axios request 
+* The code I created had a flaw: my register page was not created with universality in mind. I solved this by adding a register page for each of the databases, but I have now learned to create universal pages from the start of my PHP projects. 
 
-- my layout was also an issue but in most places I utilised flex boxes for the main containers in order to fixate the contents within that position on any screen
+* Password Hashing was also a challenge, but I solved it by seeking knowledge from those who understood the language better than I did, learning as they explained how to properly implement the functionality.
 
-- Displaying data from my API was also my largest issue but I was able to dynamically display data from the API
+* Becoming overwhelmed with tracking every possible situation was also a challenge. For example, to make it easier to implement, I created one php file that changed its output based on several variables. Because of this, there are points where I had to re-orient myself and start reading from the start again to see what I had to change.
 
-- overthinking somethings is my issue
-
-<!-- - Something we unfortunately could not implement because of time restrictions was Amazon's S3 Bucket's, in the end we had to drop it revert back to Multer for image uploading
-- A big challenge was the tag handling in the question's portal, with the help of the team, we were able to get it working
-- Getting the emailer to work was also a big pain point, but eventually after a lot of trial-and-error we got it working -->
-
+<!-- Future Implementation -->
 ### Future Implementation
 
-<!-- TODO Change this! -->
+* I will remove the needless columns in the database. These columns include: password for non-receptionists and a signed in column, which was deprecated upon implementing $_SESSION compatibility to see the data of which user was signed in. 
 
-stipulate functionality and improvements that can be implemented in the future.
+* The calendar could be made more interactive, since at this current point the dates are not clickable and it only highlights the current date. Date inputs are therefore delegated to an input type="date" and not the larger, more styled, calendar.
 
-- I will ensure to populate data into the UI Card, Polaradarchart and PieChart
+* I would like to add multiple 'pages' to the tables that display all profiles, especially the patients page. These 'pages' would display 1-15 patients each, and therefore make it easier to read once more than 15 patients have been added.
 
-- My Front-end needs some work as well
+* I would also like to make the website completely responsive
 
-<!-- - We would like to make this a fully responsive website
-- We would like to implement dark mode
-- Implement Pagination on Questions Page -->
-
-<!-- MOCKUPS -->
-
+<!-- Final Outcome -->
 ## Final Outcome
-
+<!-- MOCKUPS -->
 ### Mockups
 
-<!-- TODO Change this -->
-![image1] [image1]
-![image2][image2]
-![image3][image3]
+![image7](Mockups%20And%20Database/Mockup1.png)
+![image8](Mockups%20And%20Database/Mockup2.png)
+![image9](Mockups%20And%20Database/Mockup3.png)
+
 <br>
 
-
 <!-- VIDEO DEMONSTRATION -->
-
 ### Video Demonstration
 
-<!-- TODO Change this -->
+  * Caution: Because this is a Markdown file, this video will have no sound. It must be downloaded to access the sound.
+<video src="Mockups And Database\VanWykNico_221179_DV200_Presentation_Video.mp4" controls="controls" style="max-width: 730px;">
 
-<!-- To see a run through of OpenStack, click below: -->
-
-[View Demonstration](https://drive.google.com/file/d/1NPY0j63W65k5T3B4179dxDqmp5iEE_l3/view?usp=sharing)
-
-See the [open issues](https://github.com/Tsebo200/Dream-Team/issues) for a list of proposed features (and known issues).
+[View Demonstration](https://drive.google.com/file/d/184F6lbd4yaS4TS12pho0h7AgWf0kZV1L/view?usp=sharing)
 
 <!-- AUTHORS -->
-
 ## Author
-- **Tsebo Ramonyalioa** - [Github](https://github.com/Tsebo200)
-
+* **Nico van Wyk** - [Github](https://github.com/Pantonym)
 
 <!-- LICENSE -->
-
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information.\
+Distributed under the MIT License. See `LICENSE` for more information.
 
-<!-- LICENSE -->
-
+<!-- Contact -->
 ## Contact
-**Tsebo Ramonyalioa** - [tsebo.ramonyalioa.an@gmail.com](mailto:tsebo.ramonyalioa.an@gmail.com) - [@inspiration200200](https://www.instagram.com/inspiration__200) 
+**Nico van Wyk** - [221179@virtualwindow.co.za](mailto:221179@virtualwindow.co.za)
 
-- **Project Link** - https://github.com/Tsebo200/Dream-Team
+* **Project Link** - https://github.com/Pantonym/DV200_Term2
 
 <!-- ACKNOWLEDGEMENTS -->
-
+<!-- all resources that you used and Acknowledgements here -->
 ## Acknowledgements
 
-<!-- all resources that you used and Acknowledgements here -->
-<!-- TODO Change this -->
-
-- [Stack Overflow](https://stackoverflow.com/)
-- [Figma](https://www.figma.com/)
-<!-- - [Lecturer](https://github.com/MikeMaynard14) -->
-<!-- - [Freepik](https://www.freepik.com) -->
-<!-- - [Miro](https://miro.com/?utm_source=google&utm_medium=cpc&utm_campaign=S|GOO|BRN|ZA|EN-EN|Brand|Exact&utm_adgroup=&utm_custom=18259414532&utm_content=620159863882&utm_term=miro&device=c&location=1028971) -->
-<!-- - [Mongoose Docs](https://mongoosejs.com/docs/api.html) -->
-<!-- - [MockupWorld](https://www.mockupworld.co/) -->
-- [Flexy Boxes](https://the-echoplex.net/flexyboxes/)
-
-[image1]: src/Assets/Images/Dashboard.png
-[image2]: src/Assets/Images/Compare.png
-[image3]: src/Assets/Images/Timeline.png
-
- <!-- [image1]: client/readme-assets/about-project.png -->
- <!-- [image2]: client/readme-assets/register.jpg -->
-<!-- [image3]: client/readme-assets/verify.jpg -->
-<!-- [image4]: client/readme-assets/question.jpg
-[image5]: client/readme-assets/answer.jpg
-[image6]: client/src/Assets/mockups/mockup6.jpg
-[image7]: client/src/Assets/mockups/mockup7.jpg
-[image8]: client/src/Assets/mockups/wireframes.jpg
-[image9]: client/src/Assets/mockups/moodboard.jpg
-[image10]: Images/mockup10.jpg
-[image11]: Images/mockup2.jpg
-[image12]: Images/mockup3.jpg
-[image13]: Images/mockup4.jpg
-[image14]: client/src/Assets/mockups/mockup8.jpg  -->
-
-<!-- [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/tsebo-ramonyalioa-2392381b4/
-[instagram-shield]: https://img.shields.io/badge/-Instagram-black.svg?style=flat-square&logo=instagram&colorB=555
-[instagram-url]: https://www.instagram.com/wiaan.dev/ -->
+* [Lecturer](https://github.com/TsungaiKats)
+* [Figma](https://www.figma.com/)
+* [W3Schools](https://www.w3schools.com)
+* **Industry Professional** - Gerhard Herselman
