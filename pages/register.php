@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- This page adds a new receptionist -->
 
 <head>
 

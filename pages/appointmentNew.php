@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- This page creates a new appointment -->
 
 <head>
 
@@ -60,13 +61,14 @@
             <h1 style="margin-left: 150px; font-size: 60px; width: 600px;">New Appointment? <br> Create here!</h1>
         </div>
 
-        <!-- --Input Form -->
+        <!-- --Input Form: callas the create.php action -->
         <form method="post" action="actions/create.php?db=appointment" class="col" style="margin-left: 15%;">
 
             <!-- --Title -->
             <h2 style="text-align: center; font-size: 46px; width: 400px;">Welcome</h2>
             <!-- --Inputs -->
             <div style="width: 400px; text-align: center;">
+            <!-- call the appointment_inputs.php component -->
                 <?php include 'components/appointment_inputs.php' ?>
             </div>
 

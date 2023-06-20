@@ -2,35 +2,45 @@
 
 include 'db.php';
 
+// Gather all receptionists to test who is logging in
 $sql = "SELECT * FROM receptionist";
 $result = $conn->query($sql);
 
+// Gather the items that the user submitted
 $Username = $_GET['signin_name'];
 $Password = $_GET['signin_pass'];
 
+// Test the data with what the user submitted
 while ($row = $result->fetch_assoc()) {
 
-    // If the Name is correct
+    // --If the name is correct
     if ($row['Name'] == $Username) {
 
+        // ----The name has been found. This will be used for error message generation
         $bFoundName = true;
 
-        // --Test if the password is correct
-        if ($row['Password'] == $Password) {
+        // ----Collect the encrypted password from the database (It has been encrypted using password_hash() during receptionist update/creation)
+        $Password_Hash = $row['Password'];
+        // ----Verify the encrypted password with the one the user submitted using the password_verify() function
+        $verification_result = password_verify($Password, $Password_Hash);
+
+        // --If the password is correct
+        if ($verification_result == true) {
+            // ----The password has been found.
             $bFoundPass = true;
 
             // ----Change which user is currently signed in
-            $sql2 = "UPDATE receptionist SET SignedIn = '1' WHERE Password = '$Password'";
+            $sql2 = "UPDATE receptionist SET SignedIn = '1' WHERE Password = '$Password_Hash'";
             $result = $conn->query($sql2);
 
             //----exit the loop
             break;
 
-            // --Password is incorrect
+            // --If the password is incorrect
         } else {
             $bFoundPass = false;
 
-            //----exit the loop
+            // ----Exit the loop
             break;
         }
 
@@ -41,6 +51,7 @@ while ($row = $result->fetch_assoc()) {
 
 }
 
+// Error message generation
 if ($bFoundName == false) {
 
     header("location: ../index.php?error=Incorrect Name");

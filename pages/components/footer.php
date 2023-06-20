@@ -1,4 +1,5 @@
 <?php
+// This footer is called on each relevant page. The navbar is not a component because the underlined nav link changes on each page.
 
 echo '<div class="container">';
 echo '<div class="row" style="margin-left: 5%;">';

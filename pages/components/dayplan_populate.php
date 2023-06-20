@@ -2,7 +2,7 @@
 include 'actions/db.php';
 
 if (isset($_GET['date'])) {
-    // Assign date variable
+    // Collect the selected date from the header
     $date = $_GET['date'];
 
     // Build the SQL to get all appointments for this date
@@ -15,6 +15,7 @@ if (isset($_GET['date'])) {
         <h1 style="width: 450px; text-align: center; padding-top: 3.5%; color: white;"> ' . $date . ' </h1>
     </div>';
 
+    // Body (displays appointment information)
     echo '
     <div id="dayplan_body">
         <table id="dayplan_table">
@@ -27,11 +28,14 @@ if (isset($_GET['date'])) {
                     <th style="border-right: 0px; font-size: 18px;"> <a style="margin-left: 5px; color: black;" href="appointmentNew.php?date=' . $date . '" role="button">ADD NEW</a> </th>
                 </tr>';
 
+    // Display the relevant appointment information
     while ($row = $result->fetch_assoc()) {
 
+        // --Collect relevant doctor and patient ID's
         $PatientID = $row['PatientID'];
         $DoctorID = $row['DoctorID'];
 
+        // --Build sql queries to build their names because the database links their ID's to appointments to ensure there is no confusion in case someone has the same name as someone else.
         $sqlD = "SELECT Name, Surname FROM doctors WHERE DoctorID = '$DoctorID'";
         $resultD = $conn->query($sqlD);
         while ($rowD = $resultD->fetch_assoc()) {
@@ -44,6 +48,7 @@ if (isset($_GET['date'])) {
             $PatientName = $rowP['Name'] . ' ' . $rowP['Surname'];
         }
 
+        // --Display the collected information
         echo '<tr>';
         echo '<td style="border-bottom: 3px solid black;">' . $PatientName . '</td>';
 
@@ -60,6 +65,7 @@ if (isset($_GET['date'])) {
     </div>';
 
 } else {
+    // Use the current date if no date has been selected. The output is built in a similar way to the selected date's output.
     $date_unselected = date("Y-m-d");
 
     $sql = "SELECT * FROM appointments WHERE AppointmentDate= '$date_unselected'";

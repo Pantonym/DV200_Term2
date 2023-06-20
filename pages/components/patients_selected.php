@@ -1,4 +1,5 @@
 <?php
+// See doctors_selected.php, this page works similar except for what data is displayed as it uses a different table.
 error_reporting(0);
 
 include 'actions/db.php';
@@ -48,6 +49,8 @@ if ($SuperUser_Global == true) {
                 $Selected_MedNum = $row["MedicalAidNumber"];
                 $Selected_PrevApp = $row["PrevAppointments"];
 
+                $Selected_Img = $row["ProfileImg"];
+
             }
 
             echo '<div style="float: left;">';
@@ -69,7 +72,7 @@ if ($SuperUser_Global == true) {
             echo '</div>';
 
             echo '<div class="selected_img">';
-            echo '<img src="../assets/images/NoImage.png" alt="Profile Image">';
+            echo '<img src="../pages/actions/profiles/' . $Selected_Img . '" alt="Profile Image" style="width:400px; height: 400px;">';
 
             echo '<ul style="list-style-type: none; margin-top: 10px;">';
             echo '<li style="display: inline-block; margin-top: 5px;">';
@@ -77,6 +80,16 @@ if ($SuperUser_Global == true) {
 
             echo '</li>';
             echo '<li style="display: inline-block; margin-left: 15px; margin-top: 12px; position: absolute;"><img src="../assets/images/Edit.svg" alt="Edit Information"></li>';
+
+            echo '<form action="actions/upload.php" method="post" enctype="multipart/form-data">
+
+		    <input type="file" name="my_image">
+            <input type="hidden" name="page" value="patients">
+            <input type="hidden" name="ID_DB" value="1">
+		    <input type="submit" name="submit" value="Upload">
+
+	        </form>';
+
             echo '</ul>';
             echo '</div>';
 
@@ -156,6 +169,8 @@ if ($SuperUser_Global == true) {
                 $Selected_MedNum = $row["MedicalAidNumber"];
                 $Selected_PrevApp = $row["PrevAppointments"];
 
+                $Selected_Img = $row["ProfileImg"];
+
             }
 
             echo '<div style="float: left;">';
@@ -177,7 +192,7 @@ if ($SuperUser_Global == true) {
             echo '</div>';
 
             echo '<div class="selected_img">';
-            echo '<img src="../assets/images/NoImage.png" alt="Profile Image">';
+            echo '<img src="../pages/actions/profiles/' . $Selected_Img . '" alt="Profile Image" style="width:400px; height: 400px;">';
 
             echo '<ul style="list-style-type: none; margin-top: 10px;">';
             echo '<li style="display: inline-block; margin-top: 5px;">';
@@ -185,6 +200,16 @@ if ($SuperUser_Global == true) {
 
             echo '</li>';
             echo '<li style="display: inline-block; margin-left: 15px; margin-top: 12px; position: absolute;"><img src="../assets/images/Edit.svg" alt="Edit Information"></li>';
+
+            echo '<form action="actions/upload.php" method="post" enctype="multipart/form-data">
+
+		    <input type="file" name="my_image">
+            <input type="hidden" name="page" value="patients">
+            <input type="hidden" name="ID_DB" value="' . $id . '">
+		    <input type="submit" name="submit" value="Upload">
+
+	        </form>';
+
             echo '</ul>';
             echo '</div>';
 

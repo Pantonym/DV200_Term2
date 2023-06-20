@@ -19,11 +19,16 @@ if ($db == "receptionist") {
         $password = $_POST["password"];
         $rank = $_POST["rank"];
 
+        // --Create a secure password from the supplied password
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
         // --sql query:
         $sql = "INSERT INTO receptionist (RecepID, ProfileImg, Name, Surname, Age, Gender, PhoneNumber, Email, Password, Rank, SignedIn) 
-        VALUES('','http','$name','$surname','$age','$gender','$phonenum','$email','$password','$rank', '0')";
+        VALUES('','http','$name','$surname','$age','$gender','$phonenum','$email','$password_hash','$rank', '0')";
 
         $conn->query($sql);
+
+        // --Return to the receptionists page
         $header = "../receptionists.php";
 
 } else if ($db == "doctor") {
@@ -42,11 +47,16 @@ if ($db == "receptionist") {
 
         $room = $_POST["doctorroom"];
 
+        // --Create a secure password from the supplied password
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
         // --sql query:
         $sql = "INSERT INTO doctors (ProfileImg, Name, Surname, Age, Gender, Email, Password, PhoneNumber, DoctorID, Specialization, DoctorRoom) 
-        VALUES ('http','$name','$surname','$age','$gender','$email','$password','$phonenum','','$spec','$room')";
+        VALUES ('http','$name','$surname','$age','$gender','$email','$password_hash','$phonenum','','$spec','$room')";
 
         $conn->query($sql);
+
+        // --Return to the doctors page
         $header = "../doctors.php";
 
 } else if ($db == "patient") {
@@ -63,21 +73,28 @@ if ($db == "receptionist") {
         $password = $_POST["password"];
         $medaid = $_POST["medaid"];
 
+        // --Create a secure password from the supplied password
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
         // --sql query:
         $sql = "INSERT INTO patients (ProfileImg, Name, Surname, Age, Gender, Email, Password, PhoneNumber, PatientID, MedicalAidNumber, PrevAppointments) 
-        VALUES ('http','$name','$surname','$age','$gender','$email','$password','$phonenum','','$medaid','')";
+        VALUES ('http','$name','$surname','$age','$gender','$email','$password_hash','$phonenum','','$medaid','')";
 
         $conn->query($sql);
+
+        // --Return to the patients page
         $header = "../patients.php";
+
 } else if ($db == "appointment") {
+        // --Appointment Add
         $doctor = $_POST['app_doctor'];
         $patient = $_POST['app_patient'];
 
-        // convert the date to the correct sql format
+        // --convert the date to the correct sql format
         $input_date = $_POST['app_date'];
         $date = date("Y-m-d H:i:s", strtotime($input_date));
 
-        // Find the receptionist that added this appointment
+        // --Find the receptionist that added this appointment
         $sqlR = "SELECT RecepID FROM receptionist WHERE SignedIn = '1'";
         $resultR = $conn->query($sqlR);
 
@@ -85,7 +102,7 @@ if ($db == "receptionist") {
                 $receptionist = $rowR['RecepID'];
         }
 
-        // Find the doctor room of the doctor that was chosen
+        // --Find the doctor room of the doctor that was chosen
         $sqlDR = "SELECT DoctorRoom FROM doctors WHERE DoctorID = $doctor";
         $resultDR = $conn->query($sqlDR);
 
@@ -98,6 +115,8 @@ if ($db == "receptionist") {
         VALUES ('','$doctor','$patient','$receptionist','$app_room','$date')";
 
         $conn->query($sql);
+
+        // --Return to the appointments page
         $header = "../appointments.php";
 }
 

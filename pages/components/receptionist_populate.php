@@ -1,4 +1,5 @@
 <?php
+// See doctors_populate.php, this page works similar except for what data is displayed as it uses a different table.
 error_reporting(0);
 
 include 'actions/db.php';

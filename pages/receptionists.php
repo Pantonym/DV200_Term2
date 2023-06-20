@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- This page displays all receptionists -->
 
 <head>
 
@@ -52,16 +53,6 @@
         </div>
     </nav>
     <!-- Navbar End -->
-
-    <!-- Search -->
-    <div class="input-group mb-3 search_bar">
-        <input type="text" style="border: 0px; border-color: black;" class="form-control search_input"
-            placeholder="Search">
-        <button class="btn" type="submit" style="width: 150px;">
-            <span><img src="../assets/images/searchicon.svg" alt="Search Icon"></span>
-        </button>
-    </div>
-    <!-- Search End -->
 
     <!-- Table Selected -->
     <div class="table_selected">

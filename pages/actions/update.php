@@ -20,6 +20,9 @@ if ($db == "receptionist") {
     $password = $_POST["password"];
     $rank = $_POST["rank"];
 
+    // --Encrypt the password using the password_hash() function
+    $password_hash = password_hash($password, PASSWORD_DEFAULT);
+
     // --sql query:
     // ----If no new password is chosen, it will not update the password
     if ($password == "New Password") {
@@ -29,9 +32,9 @@ if ($db == "receptionist") {
         WHERE RecepID = $id";
 
     } else {
-
+        // ----If a new password is chosen, it will update the table with the encrypted password
         $sql = "UPDATE receptionist 
-        SET Name = '$name', Surname = '$surname', Age = '$age', Gender = '$gender', PhoneNumber = '$phonenum', Email = '$email', Password = '$password', Rank = '$rank' 
+        SET Name = '$name', Surname = '$surname', Age = '$age', Gender = '$gender', PhoneNumber = '$phonenum', Email = '$email', Password = '$password_hash', Rank = '$rank' 
         WHERE RecepID = $id";
 
     }
@@ -107,15 +110,16 @@ if ($db == "receptionist") {
     $conn->query($sql);
     $header = "../patients.php";
 } else if ($db == "appointment") {
+    // --Collect inputs from the user
     $doctor = $_POST['app_doctor'];
     $patient = $_POST['app_patient'];
     $appID = $_POST['appID'];
 
-    // convert the date to the correct sql format
+    // --convert the date to the correct sql format
     $input_date = $_POST['app_new_date'];
     $date = date("Y-m-d H:i:s", strtotime($input_date));
 
-    // Find the receptionist that added this appointment
+    // --Find the receptionist that changed this appointment
     $sqlR = "SELECT RecepID FROM receptionist WHERE SignedIn = '1'";
     $resultR = $conn->query($sqlR);
 
@@ -123,7 +127,7 @@ if ($db == "receptionist") {
         $receptionist = $rowR['RecepID'];
     }
 
-    // Find the doctor room of the doctor that was chosen
+    // --Find the doctor room of the doctor that was chosen
     $sqlDR = "SELECT DoctorRoom FROM doctors WHERE DoctorID = $doctor";
     $resultDR = $conn->query($sqlDR);
 

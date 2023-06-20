@@ -1,8 +1,8 @@
 <?php
-$days = array('Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su');
-$months = array('January', 'February', 'March', "April", 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+// Get the current day, month and year
 $SelectedDay = date("d");
 $SelectedMonth = date("m");
+// --Get teh current month in a separate format for displaying
 $SelectedMonth2 = date("M");
 $SelectedYear = date("Y");
 
@@ -25,7 +25,6 @@ echo '
     </form>
 </div>';
 
-// 
 echo '
 <ul class="days calendar">';
 
@@ -216,6 +215,5 @@ switch ($SelectedMonth) {
 }
 
 echo '</ul>';
-
 
 ?>

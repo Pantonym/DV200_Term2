@@ -37,7 +37,7 @@ if ($SuperUser_Global == true) {
 
     while ($row = $result->fetch_assoc()) {
 
-        // --Create an entry for each entity in the database
+        // --Create an entry for each entity in the database. An add new and delete button will be available for the superuser to use
         echo '<tr>';
         echo '<td style="color: #0098c7;"> <a href="doctors.php?id=' . $row['DoctorID'] . '">' . $row['Name'] . ' ' . $row['Surname'] . '</a></td>';
         echo '<td>' . $row['DoctorID'] . '</td>';

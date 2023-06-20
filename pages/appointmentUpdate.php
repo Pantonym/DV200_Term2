@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- This is the page for updating appointments -->
 
 <head>
 
