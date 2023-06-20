@@ -16,7 +16,7 @@
 <!-- Logo and link to repository -->
 <p align="center">
   <a href="https://github.com/Pantonym/DV200_Term2">
-    <img src="assets\images\Logo.svg" width="200px" style="margin-left: 10px">
+    <img src="assets\images\Logo.svg" width="200px">
   </a>
 </p>
 
@@ -27,6 +27,7 @@
     <!-- Bug and New Feature Links -->
     <a href="https://github.com/Pantonym/DV200_Term2/issues">Report Bug</a>
     <a href="https://github.com/Pantonym/DV200_Term2/issues">Request Feature</a>
+    <br>
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -55,66 +56,40 @@
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
-<!--PROJECT DESCRIPTION-->
-
+<!-- About the Project -->
 ## About the Project
 
-<!-- header image of project -->
-
-<!-- ![image1][image1] -->
-
+<!--PROJECT DESCRIPTION-->
 ### Project Description
-
-Welcome to Dream Team! This is an API-generated webpage, it is similar to seeing a Forex website/application which displays statistics on the currencies, well with that in mind, Dream Team displays players' statistics such as their Field Ground Points,
-3pt field ground goals made, field ground percentage ad well as more stats such as offensive rebounds. This website benefits NBA and basketball wannabes to learn more about basketball much easier with the help of Chart.js to display the content in an interesting manner. Please note that most of these NBA stats are up to 2018.
+VeriCalm is a medical database management portal that allows receptionists to add, update and delete doctor profiles, patient profiles and their own profiles. They can also add, delete and update appointments. The Head Receptionist is the SuperUser, and can therefore edit any entity in the database, whereas Receptionists can only edit their own profiles and the appointments. 
 
 ### Built With
-<!-- [<img src="https://www.svgrepo.com/show/331488/mongodb.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://www.mongodb.com/cloud/atlas/lp/try4?utm_source=google&utm_campaign=gs_emea_south_africa_search_core_brand_atlas_desktop&utm_term=mongodb&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624560&adgroup=115749711783) -->
-
-<!-- [<img src="https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg" width="5%" height="5%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://expressjs.com/) -->
-[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" width="6%" height="6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://reactjs.org/)[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/800px-Sass_Logo_Color.svg.png" width="6%" height="6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://sass-lang.com/documentation/) [<img src="https://avatars.githubusercontent.com/u/10342521?s=280&v=4" width="6%" height="6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://www.chartjs.org/docs/latest/) [<img src="https://app.balldontlie.io/favicon.ico" width="6%" height="6%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://app.balldontlie.io/explore) 
-
-
-
-<!-- [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png?20170401104355" width="7%" height="7%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://nodejs.org/en/) -->
-
-<!-- [<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ionic/ionic-original.svg" width="7%" height="7%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://ionicframework.com/)
-[<img src="https://raw.githubusercontent.com/nodemailer/nodemailer/master/assets/nm_logo_200x136.png" width="7%" height="7%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://nodemailer.com/about/) -->
-
-
-<!-- ### Hosted With
-[<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/heroku/heroku-original.svg" width="5%" height="7%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;](https://www.heroku.com/) -->
+* CSS
+* JavaScript
+* HTML
+* PHP
+* MySql
+* Xampp
 
 <!-- GETTING STARTED -->
-<!-- Make sure to add appropriate information about what prerequesite technologies the user would need and also the steps to install your project on their own mashines -->
-
 ## Getting Started
-
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
-
-For development, the latest version of Node.js is required. The latest version can be downloaded from [Node.js](https://nodejs.org/en/download/)
+For development and testing, the latest version of Xampp is required. The latest version can be downloaded from [Apache Friends](https://www.apachefriends.org/download.html)
 
 ### Installation
 
 Here are a couple of ways to clone this repo:
 
 1.  GitHub Desktop </br>
-    Enter `https://github.com/Tsebo200/Dream-Team.git` into the URL field and press the `Clone` button.
+    Enter `https://github.com/Pantonym/DV200_Term2.git` into the URL field and press the `Clone` button.
 
 2.  Clone Repository </br>
     Run the following in the command-line to clone the project:
 
     ```sh
-    git clone https://github.com/Tsebo200/Dream-Team.git
-    ```
-
-3.  Install Dependencies </br>
-    Run the following in the command-line to install all the required dependencies:
-
-    ```sh
-    npm install
+    git clone https://github.com/Pantonym/DV200_Term2.git
     ```
 
 ## Features and Functionality
