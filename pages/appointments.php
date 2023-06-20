@@ -1,3 +1,8 @@
+<?php
+// Create a session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- This is the landing page after signing in -->

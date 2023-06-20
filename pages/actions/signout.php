@@ -1,10 +1,11 @@
 <?php
+//session_start();
 
 include 'db.php';
 
-// Change the user to be signed out
-$sql = "UPDATE receptionist SET SignedIn = '0' WHERE SignedIn = '1'";
-$result = $conn->query($sql);
+// remove all variables and close the session
+session_unset();
+session_destroy();
 
 $conn->close();
 

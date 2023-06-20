@@ -4,17 +4,10 @@ error_reporting(0);
 include 'actions/db.php';
 
 // Find wether or not the current user is a superuser
-$sql_test = "SELECT * FROM receptionist WHERE SignedIn = '1'";
-$result_test = $conn->query($sql_test);
-
-while ($row_test = $result_test->fetch_assoc()) {
-
-    if ($row_test['Rank'] == 'Head Receptionist') {
-        $SuperUser_Global = true;
-    } else if ($row_test['Rank'] == 'Receptionist') {
-        $SuperUser_Global = false;
-    }
-
+if ($_SESSION["UserType"] == 'Head Receptionist') {
+    $SuperUser_Global = true;
+} else if ($_SESSION["UserType"] == 'Receptionist') {
+    $SuperUser_Global = false;
 }
 
 // Select all entities to display
@@ -31,7 +24,7 @@ if ($SuperUser_Global == true) {
     echo '<th class="th_all_table">Specialization</th>';
 
     echo '<th class="th_all_table">Email</th>';
-    echo '<th class="th_all_table">Doctor Room</th>';                  // ----Open the page to register a new doctor
+    echo '<th class="th_all_table">Doctor Room</th>'; // ----Open the page to register a new doctor
     echo '<th class="th_all_table" style="border-right: 0px;"><a href="doctorRegister.php" role="button">ADD NEW</a></th>';
     echo '</tr>';
 
@@ -44,13 +37,13 @@ if ($SuperUser_Global == true) {
 
         echo '<td>' . $row['Specialization'] . '</td>';
         echo '<td>' . $row['Email'] . '</td>';
-        echo '<td>' . $row['DoctorRoom'] . '</td>';                         // ----send the correct id to the DELETE page, as well as information on which database to target
+        echo '<td>' . $row['DoctorRoom'] . '</td>'; // ----send the correct id to the DELETE page, as well as information on which database to target
         echo '<td style="border-right: 0px;"><a class="btn btn-danger" href="actions/delete.php?id=' . $row['DoctorID'] . '&page=doctor" role="button">Delete</a></td>';
         echo '<tr>';
 
     }
 
-// If the user is NOT a superuser
+    // If the user is NOT a superuser
 } else if ($SuperUser_Global == false) {
 
     echo '<tr>';

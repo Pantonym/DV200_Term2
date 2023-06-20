@@ -1,5 +1,6 @@
 <?php
-
+// ----Create a session
+session_start();
 include 'db.php';
 
 // Gather all receptionists to test who is logging in
@@ -29,9 +30,9 @@ while ($row = $result->fetch_assoc()) {
             // ----The password has been found.
             $bFoundPass = true;
 
-            // ----Change which user is currently signed in
-            $sql2 = "UPDATE receptionist SET SignedIn = '1' WHERE Password = '$Password_Hash'";
-            $result = $conn->query($sql2);
+            // ----Store session variables
+            $_SESSION["UserType"] = $row['Rank'];
+            $_SESSION["ID"] = $row['RecepID'];
 
             //----exit the loop
             break;

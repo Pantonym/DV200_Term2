@@ -4,17 +4,10 @@ error_reporting(0);
 include 'actions/db.php';
 
 // Find wether or not the current user is a superuser
-$sql_test = "SELECT * FROM receptionist WHERE SignedIn = '1'";
-$result_test = $conn->query($sql_test);
-
-while ($row_test = $result_test->fetch_assoc()) {
-
-    if ($row_test['Rank'] == 'Head Receptionist') {
-        $SuperUser_Global = true;
-    } else if ($row_test['Rank'] == 'Receptionist') {
-        $SuperUser_Global = false;
-    }
-
+if ($_SESSION["UserType"] == 'Head Receptionist') {
+    $SuperUser_Global = true;
+} else if ($_SESSION["UserType"] == 'Receptionist') {
+    $SuperUser_Global = false;
 }
 
 // Get the ID of whichever entity was just clicked
@@ -295,6 +288,8 @@ if ($SuperUser_Global == true) {
             $Selected_Spec = $row["Specialization"];
             $Selected_Room = $row["DoctorRoom"];
 
+            $Selected_Img = $row["ProfileImg"];
+
         }
 
         echo '<div style="float: left;">';
@@ -315,7 +310,7 @@ if ($SuperUser_Global == true) {
         echo '</div>';
 
         echo '<div class="selected_img">';
-        echo '<img src="../assets/images/NoImage.png" alt="Profile Image">';
+        echo '<img src="../pages/actions/profiles/' . $Selected_Img . '" alt="Profile Image" style="width:400px; height: 400px;">';
         echo '</div>';
 
     } else if ($id != null) {
@@ -342,6 +337,8 @@ if ($SuperUser_Global == true) {
             $Selected_Spec = $row["Specialization"];
             $Selected_Room = $row["DoctorRoom"];
 
+            $Selected_Img = $row["ProfileImg"];
+
         }
 
         echo '<div style="float: left;">';
@@ -362,7 +359,7 @@ if ($SuperUser_Global == true) {
         echo '</div>';
 
         echo '<div class="selected_img">';
-        echo '<img src="../assets/images/NoImage.png" alt="Profile Image">';
+        echo '<img src="../pages/actions/profiles/' . $Selected_Img . '" alt="Profile Image" style="width:400px; height: 400px;">';
         echo '</div>';
 
     }

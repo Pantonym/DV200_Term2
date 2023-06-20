@@ -4,17 +4,11 @@ error_reporting(0);
 
 include 'actions/db.php';
 
-$sql_test = "SELECT * FROM receptionist WHERE SignedIn = '1'";
-$result_test = $conn->query($sql_test);
-
-while ($row_test = $result_test->fetch_assoc()) {
-
-    if ($row_test['Rank'] == 'Head Receptionist') {
-        $SuperUser_Global = true;
-    } else if ($row_test['Rank'] == 'Receptionist') {
-        $SuperUser_Global = false;
-    }
-
+// Find wether or not the current user is a superuser
+if ($_SESSION["UserType"] == 'Head Receptionist') {
+    $SuperUser_Global = true;
+} else if ($_SESSION["UserType"] == 'Receptionist') {
+    $SuperUser_Global = false;
 }
 
 $sql = "SELECT * FROM receptionist";

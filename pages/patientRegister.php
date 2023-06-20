@@ -1,3 +1,8 @@
+<?php
+// Create a session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <!-- This page creates a new patient -->

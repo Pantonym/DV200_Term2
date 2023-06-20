@@ -5,17 +5,10 @@ error_reporting(0);
 include 'actions/db.php';
 
 // Find wether or not the current user is a superuser
-$sql_test = "SELECT * FROM receptionist WHERE SignedIn = '1'";
-$result_test = $conn->query($sql_test);
-
-while ($row_test = $result_test->fetch_assoc()) {
-
-    if ($row_test['Rank'] == 'Head Receptionist') {
-        $SuperUser_Global = true;
-    } else if ($row_test['Rank'] == 'Receptionist') {
-        $SuperUser_Global = false;
-    }
-
+if ($_SESSION["UserType"] == 'Head Receptionist') {
+    $SuperUser_Global = true;
+} else if ($_SESSION["UserType"] == 'Receptionist') {
+    $SuperUser_Global = false;
 }
 
 // Get the ID of whichever entity was just clicked
@@ -269,8 +262,8 @@ if ($SuperUser_Global == true) {
 
     if ($id == null) {
 
-        $sql = "SELECT * FROM doctors WHERE Specialization = 'Cardiology'";
-        $header_return = '../doctors.php';
+        $sql = "SELECT * FROM patients WHERE PatientID = 1";
+        $header_return = '../patients.php';
 
         $result = $conn->query($sql);
 
@@ -286,10 +279,12 @@ if ($SuperUser_Global == true) {
             $Selected_Email = $row["Email"];
 
             $Selected_Pass = $row["Password"];
-            $Selected_ID = $row["DoctorID"];
+            $Selected_ID = $row["PatientID"];
 
-            $Selected_Spec = $row["Specialization"];
-            $Selected_Room = $row["DoctorRoom"];
+            $Selected_MedNum = $row["MedicalAidNumber"];
+            $Selected_PrevApp = $row["PrevAppointments"];
+
+            $Selected_Img = $row["ProfileImg"];
 
         }
 
@@ -303,21 +298,22 @@ if ($SuperUser_Global == true) {
         echo '<li id="patient_email" class="selected_li">Email: ' . $Selected_Email . '</li>';
         echo '<li id="patient_phone_num" class="selected_li">Phone Number: ' . $Selected_PhoneNumber . '</li>';
 
-        echo '<li id="patient_id" class="selected_li">Doctor ID: ' . $Selected_ID . '</li>';
-        echo '<li id="patient_aid_num" class="selected_li">Specialization: ' . $Selected_Spec . '</li>';
-        echo '<li id="patient_prev_appt" class="selected_li">Doctor Room: ' . $Selected_Room . '</li>';
+        echo '<li id="patient_id" class="selected_li">Patient ID: ' . $Selected_ID . '</li>';
+        echo '<li id="patient_aid_num" class="selected_li">Medical Aid Number: ' . $Selected_MedNum . '</li>';
+
+        echo '<li id="patient_prev_appt" class="selected_li">Previous Appointments: ' . $Selected_PrevApp . '</li>';
 
         echo '</ul>';
         echo '</div>';
 
         echo '<div class="selected_img">';
-        echo '<img src="../assets/images/NoImage.png" alt="Profile Image">';
+        echo '<img src="../pages/actions/profiles/' . $Selected_Img . '" alt="Profile Image" style="width:400px; height: 400px;">';
         echo '</div>';
 
     } else if ($id != null) {
 
-        $sql = "SELECT * FROM doctors WHERE DoctorID = $id";
-        $header_return = '../doctors.php';
+        $sql = "SELECT * FROM patients WHERE PatientID = $id";
+        $header_return = '../patients.php';
 
         $result = $conn->query($sql);
 
@@ -333,10 +329,12 @@ if ($SuperUser_Global == true) {
             $Selected_Email = $row["Email"];
 
             $Selected_Pass = $row["Password"];
-            $Selected_ID = $row["DoctorID"];
+            $Selected_ID = $row["PatientID"];
 
-            $Selected_Spec = $row["Specialization"];
-            $Selected_Room = $row["DoctorRoom"];
+            $Selected_MedNum = $row["MedicalAidNumber"];
+            $Selected_PrevApp = $row["PrevAppointments"];
+
+            $Selected_Img = $row["ProfileImg"];
 
         }
 
@@ -350,15 +348,16 @@ if ($SuperUser_Global == true) {
         echo '<li id="patient_email" class="selected_li">Email: ' . $Selected_Email . '</li>';
         echo '<li id="patient_phone_num" class="selected_li">Phone Number: ' . $Selected_PhoneNumber . '</li>';
 
-        echo '<li id="patient_id" class="selected_li">Doctor ID: ' . $Selected_ID . '</li>';
-        echo '<li id="patient_aid_num" class="selected_li">Specialization: ' . $Selected_Spec . '</li>';
-        echo '<li id="patient_prev_appt" class="selected_li">Doctor Room: ' . $Selected_Room . '</li>';
+        echo '<li id="patient_id" class="selected_li">Patient ID: ' . $Selected_ID . '</li>';
+        echo '<li id="patient_aid_num" class="selected_li">Medical Aid Number: ' . $Selected_MedNum . '</li>';
+
+        echo '<li id="patient_prev_appt" class="selected_li">Previous Appointments: ' . $Selected_PrevApp . '</li>';
 
         echo '</ul>';
         echo '</div>';
 
         echo '<div class="selected_img">';
-        echo '<img src="../assets/images/NoImage.png" alt="Profile Image">';
+        echo '<img src="../pages/actions/profiles/' . $Selected_Img . '" alt="Profile Image" style="width:400px; height: 400px;">';
         echo '</div>';
 
     }

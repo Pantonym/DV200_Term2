@@ -5,18 +5,11 @@ error_reporting(0);
 
 include 'actions/db.php';
 
-// Find if the superuser is signed in
-$sql_test = "SELECT * FROM receptionist WHERE SignedIn = '1'";
-$result_test = $conn->query($sql_test);
-
-while ($row_test = $result_test->fetch_assoc()) {
-
-    if ($row_test['Rank'] == 'Head Receptionist') {
-        $SuperUser_Global = true;
-    } else if ($row_test['Rank'] == 'Receptionist') {
-        $SuperUser_Global = false;
-    }
-
+// Find wether or not the current user is a superuser
+if ($_SESSION["UserType"] == "Head Receptionist") {
+    $SuperUser_Global = true;
+} else if ($_SESSION["UserType"] == 'Receptionist') {
+    $SuperUser_Global = false;
 }
 
 // Find the ID of the receptionist that is currently signed in
@@ -275,6 +268,7 @@ if ($SuperUser_Global == true) {
             $Selected_Rank = $row["Rank"];
 
             $Selected_ID = $row["RecepID"];
+            $Selected_Img = $row["ProfileImg"];
 
         }
 
@@ -291,12 +285,12 @@ if ($SuperUser_Global == true) {
         echo '</div>';
 
         echo '<div class="selected_img">';
-        echo '<img src="../assets/images/NoImage.png" alt="Profile Image">';
+        echo '<img src="../pages/actions/profiles/' . $Selected_Img . '" alt="Profile Image" style="width:400px; height: 400px;">';
         echo '</div>';
 
     } else if ($id != null) {
         // Each receptionist is able to edit their own profile
-        if ($id == $signedInID) {
+        if ($id == $_SESSION["ID"]) {
 
             if (isset($_GET['update']) == false) {
                 $sql = "SELECT * FROM receptionist WHERE RecepID = $id";
@@ -319,6 +313,7 @@ if ($SuperUser_Global == true) {
                     $Selected_Rank = $row["Rank"];
 
                     $Selected_ID = $row["RecepID"];
+                    $Selected_Img = $row["ProfileImg"];
 
                 }
 
@@ -335,7 +330,7 @@ if ($SuperUser_Global == true) {
                 echo '</div>';
 
                 echo '<div class="selected_img">';
-                echo '<img src="../assets/images/NoImage.png" alt="Profile Image">';
+                echo '<img src="../pages/actions/profiles/' . $Selected_Img . '" alt="Profile Image" style="width:400px; height: 400px;">';
 
                 echo '<ul style="list-style-type: none; margin-top: 10px;">';
                 echo '<li style="display: inline-block; margin-top: 5px;">';
@@ -416,6 +411,7 @@ if ($SuperUser_Global == true) {
                 $Selected_Rank = $row["Rank"];
 
                 $Selected_ID = $row["RecepID"];
+                $Selected_Img = $row["ProfileImg"];
 
             }
 
@@ -432,7 +428,7 @@ if ($SuperUser_Global == true) {
             echo '</div>';
 
             echo '<div class="selected_img">';
-            echo '<img src="../assets/images/NoImage.png" alt="Profile Image">';
+            echo '<img src="../pages/actions/profiles/' . $Selected_Img . '" alt="Profile Image" style="width:400px; height: 400px;">';
             echo '</div>';
 
         }
