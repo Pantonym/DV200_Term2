@@ -162,7 +162,7 @@ The `Development Process` is the technical implementations and functionality don
 <!-- VIDEO DEMONSTRATION -->
 ### Video Demonstration
 
-  * Caution: Because this is a Markdown file, this video will have no sound. It must be downloaded to access the sound.
+  * Caution: The video cannot be included in the github repository as the file is larger than 100mb. Therefore, I have included a google drive link.
 <!-- <video src="Mockups And Database/VanWykNico_221179_DV200_Presentation_Video.mp4" controls="controls" style="max-width: 730px;"> -->
 
 [View Demonstration](https://drive.google.com/file/d/184F6lbd4yaS4TS12pho0h7AgWf0kZV1L/view?usp=sharing)
