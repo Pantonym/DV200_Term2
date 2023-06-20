@@ -1,19 +1,23 @@
 <br />
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/Pantonym/DV200_Term2?color=lightblue)
-![GitHub watchers](https://img.shields.io/github/watchers/Tsebo200/Dream-Team?color=lightblue)
-![GitHub language count](https://img.shields.io/github/languages/count/Tsebo200/Dream-Team?color=lightblue)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Tsebo200/Dream-Team?color=lightblue)
+![GitHub watchers](https://img.shields.io/github/watchers/Pantonym/DV200_Term2?color=lightblue)
+![GitHub language count](https://img.shields.io/github/languages/count/Pantonym/DV200_Term2?color=lightblue)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Pantonym/DV200_Term2?color=lightblue)
 
-<h5 align="center" style="padding:0;margin:0;">Tsebo Ramonyalioa</h5>
-<h5 align="center" style="padding:0;margin:0;">200200</h5>
-<h6 align="center">DV200 | Term 1</h6>
+<h5 align="center" style="padding:0;margin:0;">Nico van Wyk</h5>
+<h5 align="center" style="padding:0;margin:0;">Student Number: 221179</h5>
+<h6 align="center">DV200 | Term 2</h6>
+
 </br>
+
 <p align="center">
 
-  <a href="https://github.com/Tsebo200/Dream-Team">
-    <img src="src/Assets/Images/Dream Team Logo.svg" width="200px">
+  <a href="https://github.com/Pantonym/DV200_Term2">
+    <img src="assets\images\Logo.svg" width="200px">
   </a>
+
+</p>
 
 <h3 align="center">Dream Team</h3>
 
