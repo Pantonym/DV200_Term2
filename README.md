@@ -101,12 +101,12 @@ I chose a simple and easy-to-understand design because the management portal con
 <!-- Wireframes -->
 ### Wireframes
 
-![image1](assets\wireframes\Login.png)
-![image2](assets\wireframes\Landing.png)
-![image3](assets\wireframes\PatientPage.png)
-![image4](assets\wireframes\DoctorPage.png)
-![image5](assets\wireframes\ReseptionistPage.png)
-![image6](assets\wireframes\AddUser.png)
+![image1](assets/wireframes/Login.png)
+![image2](assets/wireframes/Landing.png)
+![image3](assets/wireframes/PatientPage.png)
+![image4](assets/wireframes/DoctorPage.png)
+![image5](assets/wireframes/ReseptionistPage.png)
+![image6](assets/wireframes/AddUser.png)
 
 <!-- Development Process -->
 ## Development Process
@@ -163,7 +163,7 @@ The `Development Process` is the technical implementations and functionality don
 ### Video Demonstration
 
   * Caution: Because this is a Markdown file, this video will have no sound. It must be downloaded to access the sound.
-<video src="Mockups And Database\VanWykNico_221179_DV200_Presentation_Video.mp4" controls="controls" style="max-width: 730px;">
+<!-- <video src="Mockups And Database/VanWykNico_221179_DV200_Presentation_Video.mp4" controls="controls" style="max-width: 730px;"> -->
 
 [View Demonstration](https://drive.google.com/file/d/184F6lbd4yaS4TS12pho0h7AgWf0kZV1L/view?usp=sharing)
 
