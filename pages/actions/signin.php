@@ -1,4 +1,11 @@
 <?php
+// Login Admin:
+// --Username: Clint
+// --Password: Clint
+// Login Normal:
+// --Username: Janet
+// --Password: Password
+
 // ----Create a session
 session_start();
 include 'db.php';
