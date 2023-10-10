@@ -95,12 +95,13 @@ if ($db == "receptionist") {
         $date = date("Y-m-d H:i:s", strtotime($input_date));
 
         // --Find the receptionist that added this appointment
-        $sqlR = "SELECT RecepID FROM receptionist WHERE SignedIn = '1'";
-        $resultR = $conn->query($sqlR);
+        $receptionist = $_SESSION["ID"];
+        // $sqlR = "SELECT RecepID FROM receptionist WHERE RecepID = '1'";
+        // $resultR = $conn->query($sqlR);
 
-        while ($rowR = $resultR->fetch_assoc()) {
-                $receptionist = $rowR['RecepID'];
-        }
+        // while ($rowR = $resultR->fetch_assoc()) {
+        //         $receptionist = $rowR['RecepID'];
+        // }
 
         // --Find the doctor room of the doctor that was chosen
         $sqlDR = "SELECT DoctorRoom FROM doctors WHERE DoctorID = $doctor";
