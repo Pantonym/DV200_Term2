@@ -6,6 +6,14 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <!-- This is the login page -->
+<!-- Sign In Information:
+    SuperUser:
+        Username: Clint
+        Password: Clint
+    Normal User:
+        Username: Janet
+        Password: Password
+-->
 
 <head>
 
